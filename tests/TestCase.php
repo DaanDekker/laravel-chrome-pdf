@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Mixsnoep\PdfPrint\Tests;
+namespace DaanDekker\ChromePdf\Tests;
 
-use Mixsnoep\PdfPrint\PdfServiceProvider;
+use DaanDekker\ChromePdf\PdfServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 
 abstract class TestCase extends Orchestra
@@ -19,7 +19,7 @@ abstract class TestCase extends Orchestra
     protected function getPackageAliases($app): array
     {
         return [
-            'Pdf' => \Mixsnoep\PdfPrint\Facades\Pdf::class,
+            'Pdf' => \DaanDekker\ChromePdf\Facades\Pdf::class,
         ];
     }
 

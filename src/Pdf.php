@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Mixsnoep\PdfPrint;
+namespace DaanDekker\ChromePdf;
 
 use Illuminate\Contracts\View\Factory as ViewFactory;
-use Mixsnoep\PdfPrint\Renderers\RendererInterface;
+use DaanDekker\ChromePdf\Renderers\RendererInterface;
 
 final class Pdf
 {

@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Mixsnoep\PdfPrint\Jobs;
+namespace DaanDekker\ChromePdf\Jobs;
 
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
 use Illuminate\Queue\Middleware\WithoutOverlapping;
 use Illuminate\Support\Facades\Storage;
-use Mixsnoep\PdfPrint\Facades\Pdf;
+use DaanDekker\ChromePdf\Facades\Pdf;
 
 class GeneratePdf implements ShouldQueue
 {

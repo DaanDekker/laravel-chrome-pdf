@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 use Illuminate\Contracts\View\Factory as ViewFactory;
 use Illuminate\Contracts\View\View;
-use Mixsnoep\PdfPrint\PdfBuilder;
-use Mixsnoep\PdfPrint\Renderers\RendererInterface;
+use DaanDekker\ChromePdf\PdfBuilder;
+use DaanDekker\ChromePdf\Renderers\RendererInterface;
 
 beforeEach(function () {
     $this->renderer = Mockery::mock(RendererInterface::class);

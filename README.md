@@ -1,6 +1,6 @@
-# Laravel PDF Print
+# Laravel Chrome PDF
 
-A Laravel package for generating PDFs using headless Chrome. Full CSS support including Tailwind CSS, Flexbox, Grid, and modern web features.
+Generate PDFs in Laravel using headless Chrome. Full CSS support including Tailwind CSS, Flexbox, Grid, and modern web features.
 
 ## Features
 
@@ -20,7 +20,7 @@ A Laravel package for generating PDFs using headless Chrome. Full CSS support in
 ## Installation
 
 ```bash
-composer require mixsnoep/laravel-pdf-print
+composer require daandekker/laravel-chrome-pdf
 ```
 
 Optionally publish the configuration:
@@ -71,7 +71,7 @@ return [
 ### Basic Usage
 
 ```php
-use Mixsnoep\PdfPrint\Facades\Pdf;
+use DaanDekker\ChromePdf\Facades\Pdf;
 
 // From a Blade view
 $pdf = Pdf::view('pdf.invoice', ['order' => $order]);
@@ -139,7 +139,7 @@ Pdf::view('pdf.report', $data)
 For large PDFs or background processing:
 
 ```php
-use Mixsnoep\PdfPrint\Jobs\GeneratePdf;
+use DaanDekker\ChromePdf\Jobs\GeneratePdf;
 
 GeneratePdf::dispatch(
     view: 'pdf.invoice',

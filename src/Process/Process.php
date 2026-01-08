@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Mixsnoep\PdfPrint\Process;
+namespace DaanDekker\ChromePdf\Process;
 
 final class Process
 {

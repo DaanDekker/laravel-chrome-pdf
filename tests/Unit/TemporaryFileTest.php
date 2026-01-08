@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Mixsnoep\PdfPrint\Support\TemporaryFile;
+use DaanDekker\ChromePdf\Support\TemporaryFile;
 
 it('creates a temporary file with content', function () {
     $tempFile = new TemporaryFile('<h1>Test</h1>', 'html');

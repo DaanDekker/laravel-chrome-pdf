@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-use Mixsnoep\PdfPrint\Exceptions\ChromeNotFoundException;
-use Mixsnoep\PdfPrint\Facades\Pdf;
-use Mixsnoep\PdfPrint\Renderers\ChromeRenderer;
+use DaanDekker\ChromePdf\Exceptions\ChromeNotFoundException;
+use DaanDekker\ChromePdf\Facades\Pdf;
+use DaanDekker\ChromePdf\Renderers\ChromeRenderer;
 
 it('throws exception when chrome is not found', function () {
     new ChromeRenderer('/nonexistent/chrome/path');
@@ -17,7 +17,7 @@ it('can create pdf builder from facade', function () {
     // This will fail at render time but the builder should be created
     $builder = Pdf::html('<h1>Test</h1>');
 
-    expect($builder)->toBeInstanceOf(\Mixsnoep\PdfPrint\PdfBuilder::class);
+    expect($builder)->toBeInstanceOf(\DaanDekker\ChromePdf\PdfBuilder::class);
 })->skip(fn () => ! file_exists('/bin/true'), 'Requires /bin/true');
 
 it('can create pdf builder from view', function () {
@@ -27,5 +27,5 @@ it('can create pdf builder from view', function () {
         'invoice' => (object) ['number' => 'INV-001'],
     ]);
 
-    expect($builder)->toBeInstanceOf(\Mixsnoep\PdfPrint\PdfBuilder::class);
+    expect($builder)->toBeInstanceOf(\DaanDekker\ChromePdf\PdfBuilder::class);
 })->skip(fn () => ! file_exists('/bin/true'), 'Requires /bin/true');

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-use Mixsnoep\PdfPrint\Process\Process;
-use Mixsnoep\PdfPrint\Process\ProcessException;
-use Mixsnoep\PdfPrint\Process\ProcessResult;
+use DaanDekker\ChromePdf\Process\Process;
+use DaanDekker\ChromePdf\Process\ProcessException;
+use DaanDekker\ChromePdf\Process\ProcessResult;
 
 it('can run a simple command', function () {
     $result = Process::fromCommand(['echo', 'hello'])->run();

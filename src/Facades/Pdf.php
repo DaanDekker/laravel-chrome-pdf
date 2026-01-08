@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Mixsnoep\PdfPrint\Facades;
+namespace DaanDekker\ChromePdf\Facades;
 
 use Illuminate\Support\Facades\Facade;
-use Mixsnoep\PdfPrint\Pdf as PdfManager;
-use Mixsnoep\PdfPrint\PdfBuilder;
+use DaanDekker\ChromePdf\Pdf as PdfManager;
+use DaanDekker\ChromePdf\PdfBuilder;
 
 /**
  * @method static PdfBuilder view(string $view, array $data = [])

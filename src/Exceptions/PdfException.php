@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Mixsnoep\PdfPrint\Exceptions;
+namespace DaanDekker\ChromePdf\Exceptions;
 
 use Exception;
 

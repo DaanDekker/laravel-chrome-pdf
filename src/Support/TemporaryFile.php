@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Mixsnoep\PdfPrint\Support;
+namespace DaanDekker\ChromePdf\Support;
 
 final class TemporaryFile
 {

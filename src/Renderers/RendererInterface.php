@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Mixsnoep\PdfPrint\Renderers;
+namespace DaanDekker\ChromePdf\Renderers;
 
 interface RendererInterface
 {

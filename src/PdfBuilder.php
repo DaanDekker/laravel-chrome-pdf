@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Mixsnoep\PdfPrint;
+namespace DaanDekker\ChromePdf;
 
 use Illuminate\Contracts\View\Factory as ViewFactory;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
-use Mixsnoep\PdfPrint\Renderers\RendererInterface;
-use Mixsnoep\PdfPrint\Support\TemporaryFile;
+use DaanDekker\ChromePdf\Renderers\RendererInterface;
+use DaanDekker\ChromePdf\Support\TemporaryFile;
 
 final class PdfBuilder
 {

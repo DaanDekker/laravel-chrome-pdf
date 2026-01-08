@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Mixsnoep\PdfPrint\Renderers;
+namespace DaanDekker\ChromePdf\Renderers;
 
-use Mixsnoep\PdfPrint\Exceptions\ChromeNotFoundException;
-use Mixsnoep\PdfPrint\Exceptions\PdfException;
-use Mixsnoep\PdfPrint\Process\Process;
-use Mixsnoep\PdfPrint\Support\TemporaryFile;
+use DaanDekker\ChromePdf\Exceptions\ChromeNotFoundException;
+use DaanDekker\ChromePdf\Exceptions\PdfException;
+use DaanDekker\ChromePdf\Process\Process;
+use DaanDekker\ChromePdf\Support\TemporaryFile;
 
 final class ChromeRenderer implements RendererInterface
 {

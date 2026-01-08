@@ -1,12 +1,12 @@
 {
-    "name": "mixsnoep/laravel-pdf-print",
-    "description": "A Laravel package for PDF generation using headless Chrome. Zero external dependencies.",
-    "keywords": ["laravel", "pdf", "chrome", "headless", "print"],
+    "name": "daandekker/laravel-chrome-pdf",
+    "description": "Generate PDFs in Laravel using headless Chrome. Full CSS support, no Node.js required.",
+    "keywords": ["laravel", "pdf", "chrome", "headless", "tailwind"],
     "license": "MIT",
     "authors": [
         {
-            "name": "Mixsnoep",
-            "email": "info@mixsnoep.nl"
+            "name": "Daan Dekker",
+            "email": "daandekker96@gmail.com"
         }
     ],
     "require": {
@@ -21,21 +21,21 @@
     },
     "autoload": {
         "psr-4": {
-            "Mixsnoep\\PdfPrint\\": "src/"
+            "DaanDekker\\ChromePdf\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Mixsnoep\\PdfPrint\\Tests\\": "tests/"
+            "DaanDekker\\ChromePdf\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Mixsnoep\\PdfPrint\\PdfServiceProvider"
+                "DaanDekker\\ChromePdf\\PdfServiceProvider"
             ],
             "aliases": {
-                "Pdf": "Mixsnoep\\PdfPrint\\Facades\\Pdf"
+                "Pdf": "DaanDekker\\ChromePdf\\Facades\\Pdf"
             }
         }
     },

@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Mixsnoep\PdfPrint;
+namespace DaanDekker\ChromePdf;
 
 use Illuminate\Contracts\View\Factory as ViewFactory;
 use Illuminate\Support\ServiceProvider;
-use Mixsnoep\PdfPrint\Renderers\ChromeRenderer;
-use Mixsnoep\PdfPrint\Renderers\RendererInterface;
+use DaanDekker\ChromePdf\Renderers\ChromeRenderer;
+use DaanDekker\ChromePdf\Renderers\RendererInterface;
 
 final class PdfServiceProvider extends ServiceProvider
 {
