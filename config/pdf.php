@@ -26,26 +26,6 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Default PDF Options
-    |--------------------------------------------------------------------------
-    |
-    | These defaults are applied to all PDFs unless overridden in the builder.
-    |
-    */
-    'defaults' => [
-        'format' => 'A4',
-        'orientation' => 'portrait',
-        'margins' => [
-            'top' => 10,
-            'right' => 10,
-            'bottom' => 10,
-            'left' => 10,
-        ],
-        'print_background' => true,
-    ],
-
-    /*
-    |--------------------------------------------------------------------------
     | Storage Settings (for queued generation)
     |--------------------------------------------------------------------------
     |
