@@ -61,7 +61,7 @@ final class ChromeRenderer implements RendererInterface
         $command[] = '--print-to-pdf=' . $outputPath;
 
         if (! isset($options['header']) && ! isset($options['footer'])) {
-            $command[] = '--print-to-pdf-no-header';
+            $command[] = '--no-pdf-header-footer';
         }
 
         if (isset($options['format'])) {
