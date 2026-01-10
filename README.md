@@ -53,12 +53,6 @@ Common Chrome paths:
 return [
     'chrome_path' => env('PDF_CHROME_PATH', '/usr/bin/chromium'),
     'timeout' => env('PDF_TIMEOUT', 60),
-    'defaults' => [
-        'format' => 'A4',
-        'orientation' => 'portrait',
-        'margins' => ['top' => 10, 'right' => 10, 'bottom' => 10, 'left' => 10],
-        'print_background' => true,
-    ],
     'storage' => [
         'disk' => env('PDF_STORAGE_DISK', 'local'),
         'path' => env('PDF_STORAGE_PATH', 'pdfs'),
