@@ -4,11 +4,10 @@ declare(strict_types=1);
 
 namespace DaanDekker\ChromePdf;
 
+use DaanDekker\ChromePdf\Renderers\RendererInterface;
 use Illuminate\Contracts\View\Factory as ViewFactory;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
-use DaanDekker\ChromePdf\Renderers\RendererInterface;
-use DaanDekker\ChromePdf\Support\TemporaryFile;
 
 final class PdfBuilder
 {
@@ -187,20 +186,10 @@ final class PdfBuilder
      */
     public function store(string $path, ?string $disk = null): string
     {
-        $tempPath = sys_get_temp_dir() . '/' . uniqid('pdf_', true) . '.pdf';
+        $storage = $disk ? Storage::disk($disk) : Storage::disk();
+        $storage->put($path, $this->output());
 
-        $this->save($tempPath);
-
-        try {
-            $storage = $disk ? Storage::disk($disk) : Storage::disk();
-            $storage->put($path, file_get_contents($tempPath));
-
-            return $path;
-        } finally {
-            if (file_exists($tempPath)) {
-                unlink($tempPath);
-            }
-        }
+        return $path;
     }
 
     /**

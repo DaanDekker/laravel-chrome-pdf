@@ -14,7 +14,9 @@ final class TemporaryFile
     {
         $this->path = sys_get_temp_dir() . '/' . uniqid('pdf_print_', true) . '.' . $extension;
 
-        file_put_contents($this->path, $content);
+        if (file_put_contents($this->path, $content) === false) {
+            throw new \RuntimeException("Failed to create temporary file: {$this->path}");
+        }
     }
 
     public static function fromHtml(string $html): static

@@ -11,18 +11,23 @@ use DaanDekker\ChromePdf\Support\TemporaryFile;
 
 final class ChromeRenderer implements RendererInterface
 {
+    private bool $validated = false;
+
     public function __construct(
         private readonly string $chromePath,
         private readonly int $timeout = 60,
-    ) {
-        $this->validateChromePath();
-    }
+    ) {}
 
     /**
      * @param  array<string, mixed>  $options
      */
     public function render(string $html, string $outputPath, array $options = []): void
     {
+        if (! $this->validated) {
+            $this->validateChromePath();
+            $this->validated = true;
+        }
+
         $tempFile = TemporaryFile::fromHtml($html);
 
         try {
@@ -64,10 +69,6 @@ final class ChromeRenderer implements RendererInterface
             $command[] = '--no-pdf-header-footer';
         }
 
-        if (isset($options['format'])) {
-            $this->getPaperSize($options['format']);
-        }
-
         if (isset($options['orientation']) && $options['orientation'] === 'landscape') {
             $command[] = '--landscape';
         }
@@ -87,23 +88,6 @@ final class ChromeRenderer implements RendererInterface
         $command[] = $inputUrl;
 
         return $command;
-    }
-
-    /**
-     * @return array{width: float, height: float}|null
-     */
-    private function getPaperSize(string $format): ?array
-    {
-        $sizes = [
-            'A4' => ['width' => 8.27, 'height' => 11.69],
-            'A3' => ['width' => 11.69, 'height' => 16.54],
-            'A5' => ['width' => 5.83, 'height' => 8.27],
-            'Letter' => ['width' => 8.5, 'height' => 11],
-            'Legal' => ['width' => 8.5, 'height' => 14],
-            'Tabloid' => ['width' => 11, 'height' => 17],
-        ];
-
-        return $sizes[ucfirst(strtolower($format))] ?? null;
     }
 
     private function validateChromePath(): void
