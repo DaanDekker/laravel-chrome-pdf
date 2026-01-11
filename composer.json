@@ -3,6 +3,11 @@
     "description": "Generate PDFs in Laravel using headless Chrome. Full CSS support, no Node.js required.",
     "keywords": ["laravel", "pdf", "chrome", "headless", "tailwind"],
     "license": "MIT",
+    "homepage": "https://github.com/DaanDekker/laravel-chrome-pdf",
+    "support": {
+        "issues": "https://github.com/DaanDekker/laravel-chrome-pdf/issues",
+        "source": "https://github.com/DaanDekker/laravel-chrome-pdf"
+    },
     "authors": [
         {
             "name": "Daan Dekker",
@@ -45,6 +50,6 @@
             "pestphp/pest-plugin": true
         }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true
 }
